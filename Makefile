@@ -27,6 +27,11 @@ run: ## - run program with  python virtual environment
 	#export FLASK_ENV=$(ENV_FLASK)
 	export FLASK_APP=$(APP) && export FLASK_ENV=$(ENV_FLASK) && venv/bin/flask run
 
+.PHONY: run_host
+run_host: ## - run program with  python virtual environment
+
+	export FLASK_APP=$(APP) && export FLASK_ENV=$(ENV_FLASK) && venv/bin/flask run --host=0.0.0.0
+
 .PHONY: clean
 clean: ## - clean python cache and remove python virtual environment
 	 rm -rf __pycache__
